@@ -91,6 +91,35 @@ head(data)
 ## 6 37.3826 2012-10-01       25
 ```
 
+
+```r
+steps_per_day2 <- aggregate(data$steps, by=list(data$date), FUN = sum)
+colnames(steps_per_day2) <- c("date", "step_count")
+
+hist(steps_per_day2$step_count, breaks = 10)
+```
+
+![](PA1_template_files/figure-html/missing_values_hist-1.png)<!-- -->
+
+
+```r
+mean(steps_per_day2$step_count)
+```
+
+```
+## [1] 10766.19
+```
+
+
+```r
+median(steps_per_day2$step_count)
+```
+
+```
+## [1] 10766.19
+```
+
+
 ## Are there differences in activity patterns between weekdays and weekends?
 
 

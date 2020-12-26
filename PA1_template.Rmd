@@ -52,6 +52,22 @@ new_count <- sum(!complete.cases(data))
 head(data)
 ```
 
+```{r missing_values_hist, echo=TRUE}
+steps_per_day2 <- aggregate(data$steps, by=list(data$date), FUN = sum)
+colnames(steps_per_day2) <- c("date", "step_count")
+
+hist(steps_per_day2$step_count, breaks = 10)
+```
+
+```{r missing_values_mean, echo=TRUE}
+mean(steps_per_day2$step_count)
+```
+
+```{r missing_values_median, echo=TRUE}
+median(steps_per_day2$step_count)
+```
+
+
 ## Are there differences in activity patterns between weekdays and weekends?
 
 ```{r activity_pattern_differences, echo=TRUE}

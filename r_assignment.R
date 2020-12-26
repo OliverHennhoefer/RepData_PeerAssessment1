@@ -46,5 +46,5 @@ daily_weekend_mean <- aggregate(daily_weekend_mean$steps, by = list(daily_weeken
 colnames(daily_weekend_mean) <- c("interval", "step_count")
 
 par(mfrow=c(1,2))
-plot(x = daily_weekday_mean$interval, y = daily_weekday_mean$mean, type = "l", col = "red")
-plot(x = daily_weekend_mean$interval, y = daily_weekend_mean$mean, type = "l", col = "blue")
+plot(x = daily_weekday_mean$interval, y = daily_weekday_mean$step_count, type = "l", col = "red")
+plot(x = daily_weekend_mean$interval, y = daily_weekend_mean$step_count, type = "l", col = "blue")
